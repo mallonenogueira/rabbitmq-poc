@@ -4,11 +4,10 @@ This repository contains a simple Proof of Concept (PoC) that demonstrates the i
 
 ## Getting Started
 
-### Prerequisites
-
-Make sure you have the following installed:
+### Tecnologies
 
 - **Node.js**
+- **Express**
 - **RabbitMQ**
 
 ### Installation
