@@ -1,0 +1,32 @@
+services:
+  database:
+    container_name: postgres
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:4.0-management
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - rabbitmq_logs:/var/log/rabbitmq
+
+volumes:
+  db_data:
+  rabbitmq_data:
+  rabbitmq_logs:
+
