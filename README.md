@@ -13,26 +13,26 @@ Make sure you have the following installed:
 
 ### Installation
 
-1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/your-repo-name.git
-    cd your-repo-name
-    ```
-
-2. Install the dependencies:
+1. Install the dependencies:
 
     ```bash
     npm install
     ```
 
-3. Configure the environment variables in a `.env` file:
+2. Configure the environment variables in a `.env` file:
 
     ```bash
     RABBITMQ_USER=admin
     RABBITMQ_PASSWORD=admin
     RABBITMQ_URL=amqp://admin:admin@localhost:5672
     PORT=3000
+    ```
+
+3. Run rabbitmq on docker compose:
+
+    ```bash
+    docker compose up -d
     ```
 
     Make sure that RabbitMQ is running locally and the credentials match the ones in your `.env` file.
