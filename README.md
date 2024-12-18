@@ -1,13 +1,77 @@
-# GitHub Codespaces ♥️ Express
+# Proof of Concept (PoC) with JavaScript and RabbitMQ
 
-Welcome to your shiny new Codespace running Express! We've got everything fired up and running for you to explore Express.
+This repository contains a simple Proof of Concept (PoC) that demonstrates the integration of **JavaScript** with **RabbitMQ**.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+## Getting Started
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+### Prerequisites
 
-To run this application:
+Make sure you have the following installed:
 
-```
+- **Node.js**
+- **RabbitMQ**
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-repo-name.git
+    cd your-repo-name
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Configure the environment variables in a `.env` file:
+
+    ```bash
+    RABBITMQ_USER=admin
+    RABBITMQ_PASSWORD=admin
+    RABBITMQ_URL=amqp://admin:admin@localhost:5672
+    PORT=3000
+    ```
+
+    Make sure that RabbitMQ is running locally and the credentials match the ones in your `.env` file.
+
+### Running the Application
+
+Start the application by running:
+
+```bash
 npm start
+```
+
+
+## Example
+
+```bash
+curl -X POST http://localhost:3000/user?userName=Mallone
+```
+
+#### console.log
+```
+Usuário criado. {
+  "userId": "4a97c775-3d5d-4725-baae-c81dcf82e30a",
+  "userName": "Mallone"
+}
+
+Carteira criada para o usuário. {
+  "timestamp": 1734557412270,
+  "data": {
+    "userId": "4a97c775-3d5d-4725-baae-c81dcf82e30a",
+    "userName": "Mallone"
+  }
+}
+
+Email enviado:  {
+  "timestamp": 1734557412270,
+  "data": {
+    "userId": "4a97c775-3d5d-4725-baae-c81dcf82e30a",
+    "userName": "Mallone"
+  }
+}
 ```
